@@ -12,277 +12,476 @@ def cargar_preguntas():
     """Estructura todas las preguntas sobre Aplicaciones en la Nube"""
     
     preguntas = [
-        # BASES DE DATOS RELACIONALES Y NoSQL
+        # Pregunta 1
         {
+            "pregunta": "¿Qué es Lambda?",
             "tipo": "opcion_multiple",
-            "pregunta": "¿Qué clave se utiliza para establecer relaciones entre tablas?",
-            "opciones": ["Clave primaria", "Clave foránea", "Clave candidata", "Clave única"],
-            "respuesta": "Clave foránea",
-            "seccion": "Bases de Datos"
-        },
-        {
-            "tipo": "true_false",
-            "pregunta": "¿Es cierto que las bases de datos de grafos son ideales para modelar relaciones jerárquicas y conexiones complejas entre datos?",
-            "respuesta": True,
-            "seccion": "Bases de Datos"
-        },
-        {
-            "tipo": "true_false",
-            "pregunta": "Las bases de datos documentales almacenan datos como pares clave-valor",
-            "respuesta": False,
-            "seccion": "Bases de Datos"
-        },
-        {
-            "tipo": "opcion_multiple",
-            "pregunta": "¿Cuáles son los elementos básicos en el modelo relacional?",
-            "opciones": ["Documentos y colecciones", "Tablas, filas y columnas", "Nodos y aristas", "Claves y valores"],
-            "respuesta": "Tablas, filas y columnas",
-            "seccion": "Bases de Datos"
-        },
-        {
-            "tipo": "true_false",
-            "pregunta": "¿Es cierto que las bases de datos de documentos almacenan información en formatos como JSON o BSON?",
-            "respuesta": True,
-            "seccion": "Bases de Datos"
-        },
-        {
-            "tipo": "opcion_multiple",
-            "pregunta": "¿Cuál de los siguientes servicios ofrece gestión de bases de datos relacionales?",
-            "opciones": ["AWS S3", "AWS RDS, Google Cloud SQL", "AWS Lambda", "Docker Hub"],
-            "respuesta": "AWS RDS, Google Cloud SQL",
-            "seccion": "Servicios en la Nube"
-        },
-        {
-            "tipo": "opcion_multiple",
-            "pregunta": "¿Qué característica principal tienen las bases de datos NoSQL orientadas a columnas?",
             "opciones": [
-                "Almacenan datos en documentos JSON",
+                "Un servicio de computación sin servidor que permite ejecutar código sin la necesidad de administrar servidores",
+                "Un servicio de pago que envía mensajes y correos",
+                "Un servicio computacional que requiere gran manejo de servidores y servicios",
+                "Ninguna de las anteriores"
+            ],
+            "respuesta": "Un servicio de computación sin servidor que permite ejecutar código sin la necesidad de administrar servidores"
+        },
+        # Pregunta 2
+        {
+            "pregunta": "Una organización quiere innovar mediante las tecnologías más recientes, pero también tiene necesidades de cumplimiento en las que se especifica que los datos se deben almacenar en ubicaciones determinadas. ¿Cuál enfoque de nube debería satisfacer sus necesidades?",
+            "tipo": "opcion_multiple",
+            "opciones": [
+                "Nube privada",
+                "Nube pública",
+                "Nube híbrida",
+                "Nube comunitaria"
+            ],
+            "respuesta": "Nube híbrida"
+        },
+        # Pregunta 3
+        {
+            "pregunta": "Una organización quiere innovar mediante las tecnologías más recientes, pero también tiene necesidades de cumplimiento en las que se especifica que los datos se deben almacenar en ubicaciones determinadas. ¿Cuál enfoque de nube debería satisfacer sus necesidades? La respuesta es Nube híbrida",
+            "tipo": "true_false",
+            "respuesta": True
+        },
+        # Pregunta 4
+        {
+            "pregunta": "AWS Management Console es una consola de administración de AWS, es una interfaz web para AWS y se utiliza para acceder a servicios de AWS como de Azure.",
+            "tipo": "true_false",
+            "respuesta": False
+        },
+        # Pregunta 5
+        {
+            "pregunta": "¿Qué significa API en el contexto de AWS? Interfaz de Programación de Aplicaciones, es un conjunto de reglas, protocolos y herramientas que permiten a diferentes aplicaciones comunicarse entre sí, especialmente para interactuar con los servicios en la nube de Amazon Web Services.",
+            "tipo": "true_false",
+            "respuesta": True
+        },
+        # Pregunta 6
+        {
+            "pregunta": "En la nube de AWS, una VPC es una Virtual Private Cloud",
+            "tipo": "true_false",
+            "respuesta": True
+        },
+        # Pregunta 7
+        {
+            "pregunta": "Un bucket es un contenedor de almacenamiento en Amazon S3 donde se guardan archivos (objetos). Es similar a una carpeta o directorio, pero a nivel del sistema de almacenamiento en la nube.",
+            "tipo": "true_false",
+            "respuesta": True
+        },
+        # Pregunta 8
+        {
+            "pregunta": "Relacione lo correcto con respecto a las características de computación en la Nube",
+            "tipo": "unir_conceptos",
+            "conceptos": {
+                "Elasticidad": "A las aplicaciones se les permite solicitar los recursos que necesitan usar de una forma rápida y cambiante (elástica)",
+                "Amplio acceso a la red": "Los recursos están disponibles desde la red y se acceden a ellos a través de mecanismos estándares desde multitud de plataformas clientes",
+                "Servicios bajo demanda": "De manera similar, una aplicación puede requerir ciertos servicios, por ejemplo de almacenamiento, computación o hosting, y los puede solicitar cuando los requiera",
+                "Medición de servicios": "Las plataformas ofrecen herramientas para monitorizar el uso de estos recursos y que se puedan controlar por parte de los usuarios",
+                "Conjunto de recursos": "Los recursos físicos (hardware) y los virtuales (software) se van asignando y reasignando según los requisitos de los usuarios y sus aplicaciones"
+            }
+        },
+        # Pregunta 9
+        {
+            "pregunta": "Azure App Service es un servicio de computación en la nube de Microsoft Azure que permite crear, alojar y escalar aplicaciones web, API RESTful y backends móviles de forma sencilla y rápida.",
+            "tipo": "true_false",
+            "respuesta": True
+        },
+        # Pregunta 10
+        {
+            "pregunta": "Otra forma de desplegar aplicaciones en Azure es a través de extensiones disponibles para Azure y App Service, las cuales se instalan para conectarse a la suscripción de Azure y luego al servicio de aplicación correcto y cargar el código fuente de la aplicación directamente desde el código.",
+            "tipo": "true_false",
+            "respuesta": True
+        },
+        # Pregunta 11
+        {
+            "pregunta": "AWS Global Infrastructure. La infraestructura global de AWS es masiva y está dividida en regiones geográficas. Las regiones geográficas se dividen en zonas de disponibilidad separadas.",
+            "tipo": "true_false",
+            "respuesta": True
+        },
+        # Pregunta 12
+        {
+            "pregunta": "¿DynamoDB utiliza el modelo de almacenamiento clave-valor y documentos?",
+            "tipo": "true_false",
+            "respuesta": True
+        },
+        # Pregunta 13
+        {
+            "pregunta": "¿Qué es API Gateway? API Gateway es un servicio de administración de API completamente automatizado que permite crear, publicar, mantener, monitorear y proteger APIs RESTful.",
+            "tipo": "true_false",
+            "respuesta": True
+        },
+        # Pregunta 14
+        {
+            "pregunta": "En una nube pública, los proveedores externos de servicios en la nube suministran los recursos como un servicio completamente administrado.",
+            "tipo": "true_false",
+            "respuesta": True
+        },
+        # Pregunta 15
+       {
+    "pregunta": "Marque las afirmaciones correctas respecto a Microsoft Azure:",
+    "tipo": "opcion_multiple_multiple",
+    "opciones": [
+        "Una categoría son las aplicaciones web y los sistemas de bases de datos como SQL Server, MariaDB, PostgreSQL y NoSQL como Cosmos DB",
+        "Otra categoría es IaaS, donde se incluyen servicios de infraestructura como máquinas virtuales",
+        "Otra categoría son los servicios para comunicación, conexión y seguridad en redes",
+        "Azure es una plataforma en la nube para implementar aplicaciones empresariales organizadas en múltiples categorías de servicios",
+        "Otra categoría son los servicios para proteger datos, identidades y entornos"
+    ],
+    "respuesta": [
+        "Una categoría son las aplicaciones web y los sistemas de bases de datos como SQL Server, MariaDB, PostgreSQL y NoSQL como Cosmos DB",
+        "Otra categoría es IaaS, donde se incluyen servicios de infraestructura como máquinas virtuales",
+        "Otra categoría son los servicios para comunicación, conexión y seguridad en redes",
+        "Azure es una plataforma en la nube para implementar aplicaciones empresariales organizadas en múltiples categorías de servicios",
+        "Otra categoría son los servicios para proteger datos, identidades y entornos"
+    ]
+        },
+
+        # Pregunta 16
+        {
+            "pregunta": "Las implementaciones en la nube pública son complejas y requieren mucho tiempo. Necesitan una importante inversión inicial en infraestructura y recursos humanos. Se tienen que contratar equipos con conocimientos avanzados de codificación e ingeniería para configurar el entorno de nube privada.",
+            "tipo": "true_false",
+            "respuesta": False
+        },
+        # Pregunta 17
+        {
+            "pregunta": "Una forma de desplegar aplicaciones en la nube de Azure es: Emplear el usuario de cliente FTP, para conectarse a Azure App Service a través de sus credenciales y luego a través del cliente FTP, y así poder ir a cargar los paquetes de la aplicación en el servicio de la aplicación.",
+            "tipo": "true_false",
+            "respuesta": True
+        },
+        # Pregunta 18
+        {
+            "pregunta": "Marque los Modelos de Servicio que se manejan en la nube:",
+            "tipo": "opcion_multiple",
+            "opciones": [
+                "IP, DNS, HTTP",
+                "PaaS, SaaS, IaaS",
+                "TCP, UDP, FTP",
+                "SSL, TLS, VPN"
+            ],
+            "respuesta": "PaaS, SaaS, IaaS"
+        },
+        # Pregunta 19
+        {
+            "pregunta": "Cloud Privada: En la Cloud Privada, la infraestructura se usa solo dentro de una única organización. En una nube privada, una única organización controla y mantiene la infraestructura subyacente para suministrar los recursos de TI.",
+            "tipo": "true_false",
+            "respuesta": True
+        },
+        # Pregunta 20
+        {
+            "pregunta": "El centro de implementación del portal de Azure es una de las formas de implementar aplicaciones, esta opción se habilita mediante el uso de acciones de GitHub.",
+            "tipo": "true_false",
+            "respuesta": True
+        },
+        # Pregunta 21
+        {
+            "pregunta": "¿Qué clave se utiliza para establecer relaciones entre tablas?",
+            "tipo": "opcion_multiple",
+            "opciones": [
+                "Clave primaria",
+                "Clave foránea",
+                "Clave candidata",
+                "Clave compuesta"
+            ],
+            "respuesta": "Clave foránea"
+        },
+        # Pregunta 22
+        {
+            "pregunta": "¿Es cierto que las bases de datos de grafos son ideales para modelar relaciones jerárquicas y conexiones complejas entre datos?",
+            "tipo": "true_false",
+            "respuesta": True
+        },
+        # Pregunta 23
+        {
+            "pregunta": "Las bases de datos documentales almacenan datos como pares clave-valor",
+            "tipo": "true_false",
+            "respuesta": False
+        },
+        # Pregunta 24
+        {
+            "pregunta": "¿Cuáles son los elementos básicos en el modelo relacional?",
+            "tipo": "opcion_multiple",
+            "opciones": [
+                "Nodos, aristas y grafos",
+                "Tablas, filas y columnas",
+                "Documentos, colecciones y campos",
+                "Claves, valores y buckets"
+            ],
+            "respuesta": "Tablas, filas y columnas"
+        },
+        # Pregunta 25
+        {
+            "pregunta": "¿Es cierto que las bases de datos de documentos almacenan información en formatos como JSON o BSON?",
+            "tipo": "true_false",
+            "respuesta": True
+        },
+        # Pregunta 26
+        {
+            "pregunta": "¿Cuál de los siguientes servicios ofrece gestión de bases de datos relacionales?",
+            "tipo": "opcion_multiple",
+            "opciones": [
+                "AWS Lambda y Azure Functions",
+                "AWS RDS y Google Cloud SQL",
+                "AWS S3 y Azure Blob Storage",
+                "DynamoDB y MongoDB Atlas"
+            ],
+            "respuesta": "AWS RDS y Google Cloud SQL"
+        },
+        # Pregunta 27
+        {
+            "pregunta": "¿Qué característica principal tienen las bases de datos NoSQL orientadas a columnas?",
+            "tipo": "opcion_multiple",
+            "opciones": [
+                "Almacenan datos en formato JSON",
                 "Organizan los datos por columnas en lugar de filas",
-                "Usan solo relaciones jerárquicas",
+                "Solo permiten consultas SQL",
                 "Requieren esquemas fijos"
             ],
-            "respuesta": "Organizan los datos por columnas en lugar de filas",
-            "seccion": "Bases de Datos"
+            "respuesta": "Organizan los datos por columnas en lugar de filas"
         },
+        # Pregunta 28
         {
-            "tipo": "true_false",
             "pregunta": "¿Es cierto que el comando SELECT en SQL se utiliza para realizar consultas?",
-            "respuesta": True,
-            "seccion": "SQL"
-        },
-        {
             "tipo": "true_false",
+            "respuesta": True
+        },
+        # Pregunta 29
+        {
             "pregunta": "¿Es cierto que SQL es un lenguaje estándar para interactuar con bases de datos relacionales?",
-            "respuesta": True,
-            "seccion": "SQL"
+            "tipo": "true_false",
+            "respuesta": True
         },
+        # Pregunta 30
         {
-            "tipo": "opcion_multiple",
             "pregunta": "¿Qué motores de bases de datos soporta AWS RDS?",
-            "opciones": ["Solo Oracle", "MySQL, PostgreSQL, SQL Server", "Solo MongoDB", "Solo Redis"],
-            "respuesta": "MySQL, PostgreSQL, SQL Server",
-            "seccion": "Servicios en la Nube"
-        },
-        {
             "tipo": "opcion_multiple",
-            "pregunta": "¿Qué define principalmente a las bases de datos NoSQL?",
             "opciones": [
-                "Solo pueden usar SQL",
+                "Solo MySQL",
+                "MySQL, PostgreSQL y SQL Server",
+                "Solo MongoDB",
+                "Solo Oracle"
+            ],
+            "respuesta": "MySQL, PostgreSQL y SQL Server"
+        },
+        # Pregunta 31
+        {
+            "pregunta": "¿Qué define principalmente a las bases de datos NoSQL?",
+            "tipo": "opcion_multiple",
+            "opciones": [
+                "Solo funcionan con SQL",
                 "Están diseñadas para datos no estructurados y escalabilidad horizontal",
                 "Requieren esquemas rígidos",
-                "No permiten relaciones entre datos"
+                "Solo se usan en aplicaciones móviles"
             ],
-            "respuesta": "Están diseñadas para datos no estructurados y escalabilidad horizontal",
-            "seccion": "Bases de Datos"
+            "respuesta": "Están diseñadas para datos no estructurados y escalabilidad horizontal"
         },
+        # Pregunta 32
         {
-            "tipo": "opcion_multiple",
             "pregunta": "¿Cuáles son ejemplos de tipos de bases de datos NoSQL?",
+            "tipo": "opcion_multiple",
             "opciones": [
                 "Solo SQL Server",
-                "Clave-valor, Documentos, Columnas",
-                "Solo relacionales",
-                "Únicamente grafos"
+                "Clave-valor, Documentos y Columnas",
+                "Solo MySQL",
+                "Solo PostgreSQL"
             ],
-            "respuesta": "Clave-valor, Documentos, Columnas",
-            "seccion": "Bases de Datos"
+            "respuesta": "Clave-valor, Documentos y Columnas"
         },
+        # Pregunta 33
         {
-            "tipo": "unir_conceptos",
-            "pregunta": "Relacione lo correcto en relación a las bases de datos documentales:",
-            "conceptos": {
-                "Formato de almacenamiento": "Almacenan información en formatos como JSON, BSON o XML",
-                "Unidad de datos": "Cada documento es una unidad de datos estructurada con campos clave y valores",
-                "Flexibilidad de esquema": "La flexibilidad permite que los documentos tengan esquemas variados"
-            },
-            "seccion": "Bases de Datos"
+           "pregunta": "Marque lo correcto en relación a las bases de datos documentales:",
+           "tipo": "opcion_multiple_multiple",
+           "opciones": [
+               "Almacenan información en formatos como JSON, BSON o XML",
+               "Cada documento es una unidad de datos estructurada con campos clave y valores",
+               "La flexibilidad permite esquemas variados",
+               "Ninguna de las anteriores"
+            ],
+         "respuesta": [
+              "Almacenan información en formatos como JSON, BSON o XML",
+              "Cada documento es una unidad de datos estructurada con campos clave y valores",
+              "La flexibilidad permite esquemas variados"
+            ]
         },
-        
-        # AWS Y SERVICIOS EN LA NUBE
+
+        # Pregunta 34
         {
-            "tipo": "opcion_multiple",
             "pregunta": "EC2 permite a los usuarios alquilar capacidad de informática virtual en la nube desplegando y ejecutando aplicaciones en:",
-            "opciones": ["Contenedores", "Instancias", "Funciones Lambda", "Volúmenes"],
-            "respuesta": "Instancias",
-            "seccion": "AWS"
-        },
-        {
             "tipo": "opcion_multiple",
+            "opciones": [
+                "Contenedores",
+                "Instancias",
+                "Buckets",
+                "Funciones"
+            ],
+            "respuesta": "Instancias"
+        },
+        # Pregunta 35
+        {
             "pregunta": "¿Cómo es el pago de AWS Lambda?",
+            "tipo": "opcion_multiple",
             "opciones": [
-                "Pago mensual fijo",
-                "Por número de funciones creadas",
+                "Por hora completa de uso",
                 "El tiempo de ejecución en milisegundos",
-                "Por capacidad de almacenamiento"
+                "Por cantidad de servidores",
+                "Mensualmente fijo"
             ],
-            "respuesta": "El tiempo de ejecución en milisegundos",
-            "seccion": "AWS"
+            "respuesta": "El tiempo de ejecución en milisegundos"
         },
-        
-        # GO PROGRAMMING
+        # Pregunta 36
         {
-            "tipo": "true_false",
             "pregunta": "Fmt es una librería clave en Go para formatear y mostrar datos en la consola",
-            "respuesta": True,
-            "seccion": "Programación Go"
+            "tipo": "true_false",
+            "respuesta": True
         },
+        # Pregunta 37
         {
+            "pregunta": "Marque las razones del por qué usar Go para Scripts de automatización es beneficioso:",
             "tipo": "opcion_multiple",
-            "pregunta": "¿Cuáles son las razones por las que usar Go para Scripts de automatización es beneficioso?",
             "opciones": [
-                "Solo rendimiento básico",
-                "Únicamente portabilidad",
-                "Todas son correctas",
-                "Ninguna es correcta"
+                "Solo por su sintaxis simple",
+                "Rendimiento y eficiencia",
+                "Solo porque es nuevo",
+                "Solo por popularidad"
             ],
-            "respuesta": "Todas son correctas",
-            "seccion": "Programación Go"
+            "respuesta": "Rendimiento y eficiencia"
         },
-        
-        # DOCKER Y CONTENEDORES
+        # Pregunta 38
         {
-            "tipo": "opcion_multiple",
-            "pregunta": "¿Cuáles son los beneficios de Docker Compose?",
-            "opciones": [
-                "Solo configuración",
-                "Configuración, Separación de servicios, Escalabilidad, Gestión simplificada",
-                "Solo escalabilidad",
-                "Únicamente gestión de redes"
-            ],
-            "respuesta": "Configuración, Separación de servicios, Escalabilidad, Gestión simplificada",
-            "seccion": "Docker"
+            "pregunta": "Relacione los beneficios de Docker Compose:",
+            "tipo": "unir_conceptos",
+            "conceptos": {
+                "Configuración": "Definir servicios en un archivo YAML",
+                "Separación de servicios": "Cada servicio se ejecuta de forma aislada",
+                "Escalabilidad": "Permite escalar servicios fácilmente",
+                "Gestión simplificada": "Comandos simples para múltiples contenedores"
+            }
         },
+        # Pregunta 39
         {
-            "tipo": "opcion_multiple",
             "pregunta": "¿Qué es Docker?",
+            "tipo": "opcion_multiple",
             "opciones": [
                 "Un sistema operativo",
                 "Docker es una plataforma que permite empaquetar aplicaciones en contenedores",
-                "Una base de datos",
-                "Un lenguaje de programación"
+                "Un lenguaje de programación",
+                "Un editor de código"
             ],
-            "respuesta": "Docker es una plataforma que permite empaquetar aplicaciones en contenedores",
-            "seccion": "Docker"
+            "respuesta": "Docker es una plataforma que permite empaquetar aplicaciones en contenedores"
         },
+        # Pregunta 40
         {
-            "tipo": "unir_conceptos",
             "pregunta": "Relacione el comando de Docker con la acción correspondiente:",
+            "tipo": "unir_conceptos",
             "conceptos": {
                 "docker rmi": "Eliminar una imagen específica",
                 "docker build": "Construye una imagen desde un Dockerfile",
                 "docker pull": "Descarga una imagen desde Docker Hub",
                 "docker images": "Lista las imágenes disponibles en el sistema"
-            },
-            "seccion": "Docker"
+            }
         },
+        # Pregunta 41
         {
-            "tipo": "opcion_multiple",
             "pregunta": "¿En qué tecnología se basa Docker?",
-            "opciones": ["Máquinas virtuales", "Contenedores", "Hipervisores", "Servidores dedicados"],
-            "respuesta": "Contenedores",
-            "seccion": "Docker"
+            "tipo": "opcion_multiple",
+            "opciones": [
+                "Máquinas virtuales",
+                "Contenedores",
+                "Cloud computing",
+                "Blockchain"
+            ],
+            "respuesta": "Contenedores"
         },
+        # Pregunta 42
         {
-            "tipo": "unir_conceptos",
             "pregunta": "Relacione el concepto de Docker con su significado:",
+            "tipo": "unir_conceptos",
             "conceptos": {
                 "Registro de Docker": "Almacén de imágenes (Docker Hub)",
                 "Cliente Docker": "Herramienta de línea de comandos",
                 "Contenedores Docker": "Unidades de ejecución",
                 "Daemon de Docker": "Servicio que ejecuta en segundo plano",
                 "Imágenes de Docker": "Plantillas de contenedores"
-            },
-            "seccion": "Docker"
+            }
         },
+        # Pregunta 43
         {
+            "pregunta": "Relacione los componentes principales de Docker con su función:",
             "tipo": "unir_conceptos",
-            "pregunta": "Relacione los significados con cada componente principal de Docker:",
             "conceptos": {
                 "Volúmenes": "Definen la persistencia de datos entre reinicios de contenedores",
                 "Redes": "Permiten que los contenedores se comuniquen entre sí",
                 "Servicios": "Definen los contenedores que se ejecutarán, incluyendo la imagen a usar y las configuraciones específicas"
-            },
-            "seccion": "Docker"
+            }
         },
+        # Pregunta 44
         {
-            "tipo": "opcion_multiple",
             "pregunta": "¿Cuáles opciones son parte de la configuración de un Dockerfile?",
+            "tipo": "opcion_multiple",
             "opciones": [
                 "Solo comandos básicos",
-                "Agregar, Puertos, Volúmenes, Configuración",
-                "Solo variables de entorno",
-                "Únicamente imágenes base"
+                "Agregar, Puertos, Volúmenes y Configuración",
+                "Solo el sistema operativo",
+                "Solo las dependencias"
             ],
-            "respuesta": "Agregar, Puertos, Volúmenes, Configuración",
-            "seccion": "Docker"
+            "respuesta": "Agregar, Puertos, Volúmenes y Configuración"
         },
+        # Pregunta 45
         {
+            "pregunta": "Relacione el concepto de Docker con su significado:",
             "tipo": "unir_conceptos",
-            "pregunta": "Relacione el concepto con su significado en Docker:",
             "conceptos": {
                 "Dockerfile": "Script para crear imágenes Docker",
                 "Registro": "Almacén de imágenes Docker",
                 "Docker Hub": "Registro público más conocido",
                 "Imagen": "Plantilla inmutable de un contenedor",
                 "Contenedor": "Instancia en ejecución de una imagen"
-            },
-            "seccion": "Docker"
+            }
         },
+        # Pregunta 46
         {
+            "pregunta": "Los volúmenes hacen que los datos sean volátiles y desaparezcan con la eliminación de contenedores.",
             "tipo": "true_false",
-            "pregunta": "Los volúmenes hacen que los datos sean volátiles y desaparezcan con la eliminación de contenedores",
-            "respuesta": False,
-            "seccion": "Docker"
+            "respuesta": False
         },
+        # Pregunta 47
         {
-            "tipo": "true_false",
             "pregunta": "Con Docker Compose, se puede usar un archivo YAML para configurar los servicios de una aplicación",
-            "respuesta": True,
-            "seccion": "Docker"
+            "tipo": "true_false",
+            "respuesta": True
         },
+        # Pregunta 48
         {
-            "tipo": "unir_conceptos",
             "pregunta": "Relacione el concepto con la definición de Docker:",
+            "tipo": "unir_conceptos",
             "conceptos": {
-                "Eficiencia": "Máximo rendimiento de los recursos",
-                "Rapidez": "Despliegue de aplicaciones en tiempos cortos",
-                "Portabilidad": "Ejecuta aplicaciones en cualquier lugar",
-                "Escalabilidad": "Fácil ampliación de un sistema",
-                "Aislamiento": "Los contenedores son independientes"
-            },
-            "seccion": "Docker"
+                "Máximo rendimiento de los recursos": "Eficiencia",
+                "Despliegue de aplicaciones en tiempos cortos": "Rapidez",
+                "Ejecuta aplicaciones en cualquier lugar": "Portabilidad",
+                "Fácil ampliación de un sistema": "Escalabilidad",
+                "Los contenedores son independientes": "Aislamiento"
+            }
         },
+        # Pregunta 49
         {
-            "tipo": "opcion_multiple",
-            "pregunta": "Verifique cuáles enunciados son verdaderos sobre el uso de Docker:",
-            "opciones": [
-                "Solo para desarrollo local",
-                "Integración continua, Microservicios, Múltiples aplicaciones sin conflictos",
-                "Solo para contenedores de bases de datos",
-                "Únicamente para migrar entre sistemas operativos"
-            ],
-            "respuesta": "Integración continua, Microservicios, Múltiples aplicaciones sin conflictos",
-            "seccion": "Docker"
+            "pregunta": "Verifique si el enunciado es verdadero. Docker se utiliza en entornos de integración continua y despliegue continuo (CI/CD):",
+            "tipo": "true_false",
+            "respuesta": True
+        },
+        # Pregunta 50
+        {
+            "pregunta": "Docker se utiliza para despliegue y gestión de aplicaciones de microservicios",
+            "tipo": "true_false",
+            "respuesta": True
+        },
+        # Pregunta 51
+        {
+            "pregunta": "Docker permite ejecutar múltiples aplicaciones en el mismo servidor sin conflictos",
+            "tipo": "true_false",
+            "respuesta": True
+        },
+        # Pregunta 52
+        {
+            "pregunta": "Docker se utiliza para migrar aplicaciones de entornos Windows a entornos Mac",
+            "tipo": "true_false",
+            "respuesta": False
         }
     ]
     
@@ -362,7 +561,6 @@ def crear_nuevo_test():
     return test
 
 def validar_respuesta(pregunta, respuesta_usuario):
-    """Valida si una respuesta es correcta y retorna información detallada"""
     resultado = {
         "correcta": False,
         "puntos": 0,
@@ -370,53 +568,80 @@ def validar_respuesta(pregunta, respuesta_usuario):
         "respuesta_correcta": None,
         "explicacion": ""
     }
-    
+
     if respuesta_usuario is None:
         resultado["explicacion"] = "❌ No respondiste esta pregunta."
         return resultado
-    
+
+    # ==========================
+    # VERDADERO / FALSO
+    # ==========================
     if pregunta["tipo"] == "true_false":
         resultado["respuesta_correcta"] = pregunta["respuesta"]
         if respuesta_usuario == pregunta["respuesta"]:
             resultado["correcta"] = True
             resultado["puntos"] = 1
-            resultado["explicacion"] = f"✅ Correcto. La respuesta es {'Verdadero' if respuesta_usuario else 'Falso'}."
+            resultado["explicacion"] = "✅ Correcto."
         else:
-            resultado["explicacion"] = f"❌ Incorrecto. Tu respuesta: {'Verdadero' if respuesta_usuario else 'Falso'}. La respuesta correcta es: {'Verdadero' if pregunta['respuesta'] else 'Falso'}."
-    
+            resultado["explicacion"] = "❌ Incorrecto."
+
+    # ==========================
+    # OPCIÓN MÚLTIPLE (UNA)
+    # ==========================
     elif pregunta["tipo"] == "opcion_multiple":
         resultado["respuesta_correcta"] = pregunta["respuesta"]
         if respuesta_usuario == pregunta["respuesta"]:
             resultado["correcta"] = True
             resultado["puntos"] = 1
-            resultado["explicacion"] = f"✅ Correcto. '{respuesta_usuario}' es la respuesta correcta."
+            resultado["explicacion"] = "✅ Correcto."
         else:
-            resultado["explicacion"] = f"❌ Incorrecto. Tu respuesta: '{respuesta_usuario}'. La respuesta correcta es: '{pregunta['respuesta']}'."
-    
-    elif pregunta["tipo"] == "unir_conceptos":
-        resultado["respuesta_correcta"] = pregunta["conceptos"]
-        aciertos = 0
-        total_relaciones = len(pregunta["conceptos"])
-        detalles = []
-        
-        for concepto, respuesta_correcta in pregunta["conceptos"].items():
-            if respuesta_usuario.get(concepto) == respuesta_correcta:
-                aciertos += 1
-                detalles.append(f"✅ {concepto}: Correcto")
-            else:
-                detalles.append(f"❌ {concepto}: Tu respuesta: '{respuesta_usuario.get(concepto, 'Sin respuesta')}' | Correcta: '{respuesta_correcta}'")
-        
-        if aciertos == total_relaciones:
+            resultado["explicacion"] = f"❌ Incorrecto. Respuesta correcta: {pregunta['respuesta']}"
+
+    # ==========================
+    # OPCIÓN MÚLTIPLE (VARIAS) 🔴 CLAVE
+    # ==========================
+    elif pregunta["tipo"] == "opcion_multiple_multiple":
+        correctas = set(pregunta["respuesta"])
+        usuario = set(respuesta_usuario)
+
+        resultado["respuesta_correcta"] = list(correctas)
+
+        if usuario == correctas:
             resultado["correcta"] = True
             resultado["puntos"] = 1
-            resultado["explicacion"] = "✅ Perfecto. Todas las relaciones son correctas.\n" + "\n".join(detalles)
-        elif aciertos >= total_relaciones / 2:
-            resultado["puntos"] = 0.5
-            resultado["explicacion"] = f"⚠️ Parcial. {aciertos}/{total_relaciones} relaciones correctas.\n" + "\n".join(detalles)
+            resultado["explicacion"] = "✅ Correcto. Seleccionaste todas las opciones correctas."
         else:
-            resultado["explicacion"] = f"❌ Incorrecto. Solo {aciertos}/{total_relaciones} relaciones correctas.\n" + "\n".join(detalles)
-    
+            resultado["explicacion"] = (
+                f"❌ Incorrecto.\n\n"
+                f"✔️ Correctas: {', '.join(correctas)}\n"
+                f"❌ Tu selección: {', '.join(usuario) if usuario else 'Ninguna'}"
+            )
+
+    # ==========================
+    # UNIR CONCEPTOS
+    # ==========================
+    elif pregunta["tipo"] == "unir_conceptos":
+        aciertos = 0
+        total = len(pregunta["conceptos"])
+        detalles = []
+
+        for concepto, correcta in pregunta["conceptos"].items():
+            if respuesta_usuario.get(concepto) == correcta:
+                aciertos += 1
+                detalles.append(f"✅ {concepto}")
+            else:
+                detalles.append(f"❌ {concepto}")
+
+        if aciertos == total:
+            resultado["correcta"] = True
+            resultado["puntos"] = 1
+        elif aciertos >= total / 2:
+            resultado["puntos"] = 0.5
+
+        resultado["explicacion"] = "\n".join(detalles)
+
     return resultado
+
 
 def calcular_resultados(test):
     """Calcula los resultados finales del test"""
@@ -480,86 +705,107 @@ def mostrar_pregunta(pregunta, indice, test):
     st.markdown(f"### 📝 Pregunta {indice + 1} de {total}")
     st.markdown(f"**Categoría:** {pregunta.get('seccion', 'General')}")
     st.write("")
-    
+
     with st.container():
         st.markdown(f"**{pregunta['pregunta']}**")
         st.write("")
-        
+
+        # ==========================
+        # VERDADERO / FALSO
+        # ==========================
         if pregunta["tipo"] == "true_false":
             respuesta_actual = test["respuestas"].get(indice)
-            if respuesta_actual is not None:
-                index_actual = 0 if respuesta_actual else 1
-            else:
-                index_actual = None
-            
+            index_actual = 0 if respuesta_actual is True else 1 if respuesta_actual is False else None
+
             respuesta = st.radio(
                 "Selecciona tu respuesta:",
                 ["Verdadero", "Falso"],
                 index=index_actual,
                 key=f"pregunta_{indice}_{pregunta['id_unico']}"
             )
-            
+
             test["respuestas"][indice] = (respuesta == "Verdadero")
-        
+
+        # ==========================
+        # OPCIÓN MÚLTIPLE (UNA)
+        # ==========================
         elif pregunta["tipo"] == "opcion_multiple":
             opciones = pregunta["opciones"].copy()
+
             random.seed(pregunta["id_unico"])
             random.shuffle(opciones)
             random.seed()
-            
+
             respuesta_actual = test["respuestas"].get(indice)
             index_actual = opciones.index(respuesta_actual) if respuesta_actual in opciones else None
-            
+
             respuesta = st.radio(
                 "Selecciona la opción correcta:",
                 opciones,
                 index=index_actual,
                 key=f"pregunta_{indice}_{pregunta['id_unico']}"
             )
-            
+
             test["respuestas"][indice] = respuesta
-        
+
+        # ==========================
+        # OPCIÓN MÚLTIPLE (VARIAS) 🔴 CLAVE
+        # ==========================
+        elif pregunta["tipo"] == "opcion_multiple_multiple":
+            opciones = pregunta["opciones"]
+            respuesta_actual = test["respuestas"].get(indice, [])
+
+            respuesta = st.multiselect(
+                "Selecciona todas las opciones correctas:",
+                opciones,
+                default=respuesta_actual,
+                key=f"pregunta_{indice}_{pregunta['id_unico']}"
+            )
+
+            test["respuestas"][indice] = respuesta
+
+        # ==========================
+        # UNIR CONCEPTOS
+        # ==========================
         elif pregunta["tipo"] == "unir_conceptos":
             st.write("**Relaciona cada concepto con su definición:**")
             st.write("")
-            
+
             conceptos = list(pregunta["conceptos"].keys())
             todas_definiciones = list(pregunta["conceptos"].values())
-            
+
             random.seed(pregunta["id_unico"])
             random.shuffle(todas_definiciones)
             random.seed()
-            
+
             respuestas_unir = test["respuestas"].get(indice, {})
             if not isinstance(respuestas_unir, dict):
                 respuestas_unir = {}
-            
+
             for concepto in conceptos:
                 st.markdown(f"**{concepto}**")
-                
+
                 definicion_correcta = pregunta["conceptos"][concepto]
-                opciones_definiciones = [definicion_correcta]
-                
+                opciones_def = [definicion_correcta]
                 otras = [d for d in todas_definiciones if d != definicion_correcta]
-                opciones_definiciones.extend(otras[:min(3, len(otras))])
-                
-                random.seed(pregunta["id_unico"] + hash(concepto))
-                random.shuffle(opciones_definiciones)
-                random.seed()
-                
+                opciones_def.extend(otras[:3])
+
+                random.shuffle(opciones_def)
+
                 respuesta_actual = respuestas_unir.get(concepto)
-                index_actual = opciones_definiciones.index(respuesta_actual) if respuesta_actual in opciones_definiciones else 0
-                
+                index_actual = opciones_def.index(respuesta_actual) if respuesta_actual in opciones_def else 0
+
                 seleccion = st.selectbox(
                     f"Definición para {concepto}:",
-                    opciones_definiciones,
+                    opciones_def,
                     index=index_actual,
                     key=f"unir_{indice}_{pregunta['id_unico']}_{concepto}"
                 )
-                
+
                 respuestas_unir[concepto] = seleccion
-            
+
             test["respuestas"][indice] = respuestas_unir
+
 
 def mostrar_navegacion_preguntas(test):
     """Muestra navegación visual de las preguntas"""
