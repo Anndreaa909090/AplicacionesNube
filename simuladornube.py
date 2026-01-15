@@ -555,7 +555,7 @@ def crear_nuevo_test():
         "fecha_finalizacion": None,
         "puntaje": None,
         "detalle_resultados": None,
-        "total_preguntas": len(preguntas_seleccionadas)  # Guardar el total
+        "total_preguntas": len(preguntas_seleccionadas)
     }
     
     return test
@@ -598,7 +598,7 @@ def validar_respuesta(pregunta, respuesta_usuario):
             resultado["explicacion"] = f"❌ Incorrecto. Respuesta correcta: {pregunta['respuesta']}"
 
     # ==========================
-    # OPCIÓN MÚLTIPLE (VARIAS) 🔴 CLAVE
+    # OPCIÓN MÚLTIPLE (VARIAS)
     # ==========================
     elif pregunta["tipo"] == "opcion_multiple_multiple":
         correctas = set(pregunta["respuesta"])
@@ -670,7 +670,7 @@ def calcular_resultados(test):
     correctas = sum(1 for d in detalle if d["correcta"])
     incorrectas = total_preguntas - correctas
     porcentaje = (puntaje_total / total_preguntas) * 100
-    aprobado = porcentaje >= 75  # 75% de aprobación sin importar el número de preguntas
+    aprobado = porcentaje >= 75
     
     errores_por_seccion = defaultdict(int)
     total_por_seccion = defaultdict(int)
@@ -749,7 +749,7 @@ def mostrar_pregunta(pregunta, indice, test):
             test["respuestas"][indice] = respuesta
 
         # ==========================
-        # OPCIÓN MÚLTIPLE (VARIAS) 🔴 CLAVE
+        # OPCIÓN MÚLTIPLE (VARIAS) - CORRECCIÓN APLICADA
         # ==========================
         elif pregunta["tipo"] == "opcion_multiple_multiple":
             opciones = pregunta["opciones"]
@@ -765,7 +765,7 @@ def mostrar_pregunta(pregunta, indice, test):
             test["respuestas"][indice] = respuesta
 
         # ==========================
-        # UNIR CONCEPTOS
+        # UNIR CONCEPTOS - CORRECCIÓN CLAVE
         # ==========================
         elif pregunta["tipo"] == "unir_conceptos":
             st.write("**Relaciona cada concepto con su definición:**")
@@ -773,10 +773,6 @@ def mostrar_pregunta(pregunta, indice, test):
 
             conceptos = list(pregunta["conceptos"].keys())
             todas_definiciones = list(pregunta["conceptos"].values())
-
-            random.seed(pregunta["id_unico"])
-            random.shuffle(todas_definiciones)
-            random.seed()
 
             respuestas_unir = test["respuestas"].get(indice, {})
             if not isinstance(respuestas_unir, dict):
@@ -786,11 +782,15 @@ def mostrar_pregunta(pregunta, indice, test):
                 st.markdown(f"**{concepto}**")
 
                 definicion_correcta = pregunta["conceptos"][concepto]
-                opciones_def = [definicion_correcta]
-                otras = [d for d in todas_definiciones if d != definicion_correcta]
-                opciones_def.extend(otras[:3])
-
+                
+                # CORRECCIÓN: Solo mostrar TODAS las definiciones posibles
+                # sin mezclar ni limitar, para que siempre estén disponibles
+                opciones_def = todas_definiciones.copy()
+                
+                # Mezclar usando seed para consistencia
+                random.seed(pregunta["id_unico"] + hash(concepto))
                 random.shuffle(opciones_def)
+                random.seed()
 
                 respuesta_actual = respuestas_unir.get(concepto)
                 index_actual = opciones_def.index(respuesta_actual) if respuesta_actual in opciones_def else 0
